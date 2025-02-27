@@ -1,130 +1,111 @@
 "use strict";
 
-/* ======= Header animation ======= */   
-const header = document.getElementById('header');  
+/* ======= Header animation ======= */
+const header = document.getElementById("header");
 
-window.onload=function() 
-{   
-    headerAnimation(); 
-
+window.onload = function () {
+  headerAnimation();
 };
 
-window.onresize=function() 
-{   
-    headerAnimation(); 
-
-}; 
-
-window.onscroll=function() 
-{ 
-    headerAnimation(); 
-
-}; 
-    
-
-function headerAnimation () {
-
-    var scrollTop = window.scrollY;
-	
-	if ( scrollTop > 100 ) {	    
-	    header.classList.add('header-shrink');    
-	    	    
-	} else {
-	    header.classList.remove('header-shrink');
-	}
-
+window.onresize = function () {
+  headerAnimation();
 };
+
+window.onscroll = function () {
+  headerAnimation();
+};
+
+function headerAnimation() {
+  var scrollTop = window.scrollY;
+
+  if (scrollTop > 100) {
+    header.classList.add("header-shrink");
+  } else {
+    header.classList.remove("header-shrink");
+  }
+}
 
 /* ===== Smooth scrolling ====== */
-/*  Note: You need to include smoothscroll.min.js (smooth scroll behavior polyfill) on the page to cover some browsers */
-/* Ref: https://github.com/iamdustan/smoothscroll */
+/*  Note: Include smoothscroll.min.js for better browser compatibility */
 
-
-let scrollLinks = document.querySelectorAll('.scrollto');
-const pageNavWrapper = document.getElementById('navigation');
+let scrollLinks = document.querySelectorAll(".scrollto");
+const pageNavWrapper = document.getElementById("navigation");
 
 scrollLinks.forEach((scrollLink) => {
+  scrollLink.addEventListener("click", (e) => {
+    // Check if the link is external (http/https) and allow it to open normally
+    if (scrollLink.href.startsWith("http")) {
+      return;
+    }
 
-	scrollLink.addEventListener('click', (e) => {
-		
-		e.preventDefault();
+    e.preventDefault(); // Prevent default only for internal links
 
-		let element = document.querySelector(scrollLink.getAttribute("href"));
-		
-		const yOffset = 69; //page .header height
-		
-		//console.log(yOffset);
-		
-		const y = element.getBoundingClientRect().top + window.pageYOffset - yOffset;
-		
-		window.scrollTo({top: y, behavior: 'smooth'});
-		
-		
-		//Collapse mobile menu after clicking
-		if (pageNavWrapper.classList.contains('show')){
-			pageNavWrapper.classList.remove('show');
-		}
+    let element = document.querySelector(scrollLink.getAttribute("href"));
+    if (!element) return; // Prevent errors if element doesn't exist
 
-		
-    });
-	
-});
-    
+    const yOffset = 69; // Header height offset
+    const y =
+      element.getBoundingClientRect().top + window.pageYOffset - yOffset;
 
-/* ===== Gumshoe SrollSpy ===== */
-/* Ref: https://github.com/cferdinandi/gumshoe  */
-// Get the sticky header
+    window.scrollTo({ top: y, behavior: "smooth" });
 
-
-// Initialize Gumshoe
-var spy = new Gumshoe('#navigation a', {
-	offset: 69 //page .header heights
+    // Collapse mobile menu after clicking
+    if (pageNavWrapper.classList.contains("show")) {
+      pageNavWrapper.classList.remove("show");
+    }
+  });
 });
 
+/* ===== Gumshoe ScrollSpy ===== */
+var spy = new Gumshoe("#navigation a", {
+  offset: 69, // Header height offset
+});
 
-/* ======= Countdown ========= */
-// set the date we're counting down to
-var target_date = new Date("Oct 12, 2028").getTime();
- 
-// variables for time units
-var days, hours, minutes, seconds;
- 
-// get tag element
-var countdown =  document.getElementById("countdown-box");
+/* ======= Countdown Timer ======= */
+// Set the countdown target date
+var target_date = new Date("Mar 6, 2025").getTime();
+
+// Get countdown container
+var countdown = document.getElementById("countdown-box");
+
+// Create and append time unit spans
 var days_span = document.createElement("SPAN");
-days_span.className = 'days';
+days_span.className = "days";
 countdown.appendChild(days_span);
+
 var hours_span = document.createElement("SPAN");
-hours_span.className = 'hours';
+hours_span.className = "hours";
 countdown.appendChild(hours_span);
+
 var minutes_span = document.createElement("SPAN");
-minutes_span.className = 'minutes';
+minutes_span.className = "minutes";
 countdown.appendChild(minutes_span);
+
 var secs_span = document.createElement("SPAN");
-secs_span.className = 'secs';
+secs_span.className = "secs";
 countdown.appendChild(secs_span);
- 
-// update the tag with id "countdown" every 1 second
+
+// Update countdown every second
 setInterval(function () {
- 
-    // find the amount of "seconds" between now and target
-    var current_date = new Date().getTime();
-    var seconds_left = (target_date - current_date) / 1000;
- 
-    // do some time calculations
-    days = parseInt(seconds_left / 86400);
-    seconds_left = seconds_left % 86400;
-     
-    hours = parseInt(seconds_left / 3600);
-    seconds_left = seconds_left % 3600;
-     
-    minutes = parseInt(seconds_left / 60);
-    seconds = parseInt(seconds_left % 60);
-     
-    // format countdown string + set tag value.
-    days_span.innerHTML = '<span class="number">' + days + '</span>' + '<span class="unit">Days</span>';
-    hours_span.innerHTML = '<span class="number">' + hours + '</span>' + '<span class="unit">Hrs</span>';
-    minutes_span.innerHTML = '<span class="number">' + minutes + '</span>' + '<span class="unit">Mins</span>';
-    secs_span.innerHTML = '<span class="number">' + seconds + '</span>' + '<span class="unit">Secs</span>'; 
- 
+  var current_date = new Date().getTime();
+  var seconds_left = (target_date - current_date) / 1000;
+
+  var days = parseInt(seconds_left / 86400);
+  seconds_left = seconds_left % 86400;
+
+  var hours = parseInt(seconds_left / 3600);
+  seconds_left = seconds_left % 3600;
+
+  var minutes = parseInt(seconds_left / 60);
+  var seconds = parseInt(seconds_left % 60);
+
+  // Update countdown display
+  days_span.innerHTML =
+    '<span class="number">' + days + '</span><span class="unit">Days</span>';
+  hours_span.innerHTML =
+    '<span class="number">' + hours + '</span><span class="unit">Hrs</span>';
+  minutes_span.innerHTML =
+    '<span class="number">' + minutes + '</span><span class="unit">Mins</span>';
+  secs_span.innerHTML =
+    '<span class="number">' + seconds + '</span><span class="unit">Secs</span>';
 }, 1000);

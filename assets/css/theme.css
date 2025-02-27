@@ -10862,7 +10862,7 @@ textarea.form-control-lg{
       display:none !important
   }
 }
-/*! * DevConf - Bootstrap 5 Template For Tech Conferences and Events * Version: Bootstra 5 v3.1 * Author: Xiaoying Riley * Copyright: 3rd Wave Media Ltd. * Website: http://themes.3rdwavemedia.com/ * Twitter: @3rdwave_themes */
+
 body{
   font-family:'Roboto', sans-serif;
   -webkit-font-smoothing:antialiased;
@@ -11523,4 +11523,19 @@ a.theme-link:hover{
   width: 100%;
   height: 100%;
   border: 0;
+}
+/* Tablet screens (768px and below) */
+@media (max-width: 768px) {
+  .hero-carousel .carousel-item-1 {
+    background: url("../images/mobbg.jpg") no-repeat center center;
+    background-size: cover;
+  }
+}
+
+/* Mobile screens (480px and below) */
+@media (max-width: 480px) {
+  .hero-carousel .carousel-item-1 {
+    background: url("../images/mobbg.jpg") no-repeat center center;
+    background-size: cover;
+  }
 }
