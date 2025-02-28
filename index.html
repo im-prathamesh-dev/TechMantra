@@ -974,6 +974,8 @@
 					target="_blank">Prathamesh</a></small>
 
 		</div><!--//container-->
+		
+		
 	</footer>
 
 	<!-- Modal Speaker -->
@@ -1022,6 +1024,17 @@
         }
 
         window.onload = animateCounter; // Start animation on page load
+
+		document.addEventListener('mousedown',function(event){
+            if(event.button == 2){
+               alert('Right-Clicking is Disabled on this Page.');
+               event.preventDeafault();
+               return false;
+            }
+        },false);
+		// Function to apply and remove blur effect
+		
+
 	</script>
 
 </body>
