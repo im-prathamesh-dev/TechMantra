@@ -205,7 +205,7 @@
   animation: l12 4s steps(14) infinite;
 }
 .loader:before {
-  content: "TeachMantra";
+  content: "TechMantra";
 }
 @keyframes l12 {
   to {background-position: 0}
