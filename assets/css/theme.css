@@ -195,21 +195,26 @@
 /* HTML: <div class="loader"></div> */
 .loader {
   width: fit-content;
-  font-size: 80px;
+  font-size: clamp(40px, 10vw, 80px); /* Responsive font size */
   font-family: monospace;
   font-weight: bold;
   text-transform: uppercase;
   color: #0000;
   -webkit-text-stroke: 1px #000;
-  background: linear-gradient(90deg,#0000 33%,#000 0 67%,#0000 0) 100%/300% 100% no-repeat text;
+  background: linear-gradient(90deg, #0000 33%, #000 0 67%, #0000 0) 100%/300% 100% no-repeat text;
   animation: l12 4s steps(14) infinite;
 }
+
 .loader:before {
   content: "TechMantra";
 }
+
 @keyframes l12 {
-  to {background-position: 0}
+  to {
+    background-position: 0;
+  }
 }
+
 
 
 body{
