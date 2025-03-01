@@ -11577,3 +11577,41 @@ a.theme-link:hover{
   }
 }
 
+/* Ensure all images have the same aspect ratio */
+.speakers-section .card-img-top {
+  width: 100%; 
+  height: 370px; /* Set a fixed height */
+  object-fit: cover; /* Ensures images maintain aspect ratio */
+}
+
+/* Make card height uniform */
+.speakers-section .card {
+  height: 100%; /* Ensures all cards take equal height */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Adjust card-body so it remains consistent */
+.speakers-section .card-body {
+  flex-grow: 1;
+  text-align: center; /* Center-align text for a cleaner look */
+}
+
+/* Improve spacing and typography */
+.speakers-section .card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333; /* Darker color for better readability */
+}
+
+.speakers-section .meta {
+  font-size: 0.95rem;
+  color: #666; /* Softer color for metadata */
+}
+
+/* Add a subtle hover effect */
+.speakers-section .card:hover {
+  transform: translateY(-5px);
+  transition: 0.3s ease-in-out;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+}
