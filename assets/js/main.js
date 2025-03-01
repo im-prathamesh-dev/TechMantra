@@ -63,7 +63,7 @@ var spy = new Gumshoe("#navigation a", {
 
 /* ======= Countdown Timer ======= */
 // Set the countdown target date
-var target_date = new Date("Mar 6, 2025").getTime();
+var target_date = new Date("Mar 11, 2025").getTime();
 
 // Get countdown container
 var countdown = document.getElementById("countdown-box");
