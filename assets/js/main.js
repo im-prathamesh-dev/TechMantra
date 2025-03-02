@@ -109,3 +109,6 @@ setInterval(function () {
   secs_span.innerHTML =
     '<span class="number">' + seconds + '</span><span class="unit">Secs</span>';
 }, 1000);
+
+
+//sc prevention

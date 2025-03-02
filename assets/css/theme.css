@@ -11576,42 +11576,134 @@ a.theme-link:hover{
     background-size: cover;
   }
 }
-
-/* Ensure all images have the same aspect ratio */
-.speakers-section .card-img-top {
-  width: 100%; 
-  height: 370px; /* Set a fixed height */
-  object-fit: cover; /* Ensures images maintain aspect ratio */
+/* Events Section Styling */
+.speakers-section {
+  padding: 50px 0;
+  background-color: #f8f9fa;
 }
 
-/* Make card height uniform */
-.speakers-section .card {
-  height: 100%; /* Ensures all cards take equal height */
+.section-heading {
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #333;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* Card Container */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Card Styling */
+.card {
   display: flex;
   flex-direction: column;
+  height: 100%;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border: none;
+  overflow: hidden;
+  border-radius: 10px;
 }
 
-/* Adjust card-body so it remains consistent */
-.speakers-section .card-body {
-  flex-grow: 1;
-  text-align: center; /* Center-align text for a cleaner look */
-}
-
-/* Improve spacing and typography */
-.speakers-section .card-title {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #333; /* Darker color for better readability */
-}
-
-.speakers-section .meta {
-  font-size: 0.95rem;
-  color: #666; /* Softer color for metadata */
-}
-
-/* Add a subtle hover effect */
-.speakers-section .card:hover {
+.card:hover {
   transform: translateY(-5px);
-  transition: 0.3s ease-in-out;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
 }
+
+/* Image Styling */
+.card-img-top {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.3s ease-in-out;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.08);
+}
+
+/* Card Body */
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  text-align: center;
+  background: #fff;
+}
+
+/* Card Title */
+.card-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #0056b3;
+  margin-bottom: 10px;
+  transition: color 0.3s ease-in-out;
+}
+
+.card:hover .card-title {
+  color: #003580;
+}
+
+/* Card Text */
+.card-text {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.4;
+}
+
+/* Meta Data */
+.meta {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.meta b {
+  color: #222;
+}
+
+/* Contact Info */
+.fa-phone {
+  color: #28a745;
+  margin-right: 5px;
+  font-size: 1.2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .card {
+      min-height: 300px;
+  }
+  .card-img-top {
+      height: 200px;
+  }
+  .card-body {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+  }
+}
+
+@media (max-width: 576px) {
+  .card {
+      min-height: 280px;
+  }
+  .card-img-top {
+      height: 180px;
+  }
+  .card-body {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+  }
+}
+
