@@ -11707,3 +11707,31 @@ a.theme-link:hover{
   }
 }
 
+.floating-insta {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+.floating-insta img {
+  width: 190px; /* Increased size */
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.floating-insta img:hover {
+  transform: scale(1.2);
+}
+
+/* 📱 Responsive Styles for Mobile */
+@media (max-width: 768px) {
+  .floating-insta {
+      bottom: 15px;
+      right: 10px;
+  }
+
+  .floating-insta img {
+      width: 120px; /* Increase size for mobile too */
+  }
+}
