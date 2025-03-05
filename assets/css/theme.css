@@ -11735,3 +11735,88 @@ a.theme-link:hover{
       width: 150px; /* Increase size for mobile too */
   }
 }
+
+
+
+/* Popup Container */
+#popup {
+  display: block; /* Ensure it's visible */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* background: rgba(0, 0, 0, 0.8); Slight opacity for better readability */
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  z-index: 1001;
+  width: 100%; /* Adjusted for better responsiveness */
+  max-width: 750px; /* Limits size for larger screens */
+  /* box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2); */
+}
+
+/* Popup Image */
+#popup img {
+  max-width: 100%; /* Full width inside popup */
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Popup Text */
+.popup-text {
+  font-size: 22px;
+  color: white;
+  margin: 15px 0;
+}
+
+/* Close Button */
+.close-btn {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+  margin-top: 15px;
+  width: 20%;
+}
+
+.close-btn:hover {
+  background-color: #cc0000;
+}
+
+/* Overlay (Backdrop) */
+#overlay {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+}
+
+/* 📱 Mobile Styles */
+@media (max-width: 480px) {
+  #popup {
+      width: 90%;
+      max-width: 380px; /* Adjusted for mobile */
+      padding: 15px;
+  }
+
+  #popup img {
+      max-width: 320px;
+  }
+
+  .popup-text {
+      font-size: 18px; /* Smaller text on small screens */
+  }
+
+  .close-btn {
+      font-size: 16px;
+      padding: 10px;
+  }
+}

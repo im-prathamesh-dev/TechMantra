@@ -110,5 +110,13 @@ setInterval(function () {
     '<span class="number">' + seconds + '</span><span class="unit">Secs</span>';
 }, 1000);
 
+document.addEventListener("DOMContentLoaded", function () {
+  // Show popup on page load
+  document.getElementById("popup").style.display = "block";
+  document.getElementById("overlay").style.display = "block";
+});
 
-//sc prevention
+function closePopup() {
+  document.getElementById("popup").style.display = "none";
+  document.getElementById("overlay").style.display = "none";
+}
