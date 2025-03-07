@@ -11745,14 +11745,14 @@ a.theme-link:hover{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* background: rgba(0, 0, 0, 0.8); Slight opacity for better readability */
+  /* background: rgba(0, 0, 0, 0.9); Darker background for better contrast */
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 12px;
   text-align: center;
   z-index: 1001;
-  width: 100%; /* Adjusted for better responsiveness */
+  width: 90%; /* Adjusted for better responsiveness */
   max-width: 750px; /* Limits size for larger screens */
-  /* box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2); */
+  /* box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.3); */
 }
 
 /* Popup Image */
@@ -11762,11 +11762,35 @@ a.theme-link:hover{
   border-radius: 10px;
 }
 
+/* 📢 Free Fire Announcement Section */
+.popup-section {
+  margin-top: 15px;
+  padding: 15px;
+  /* background: rgba(255, 255, 255, 0.1); */
+  border-radius: 10px;
+}
+
+/* Heading inside popup */
+.popup h2 {
+  color: #ffcc00;
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
 /* Popup Text */
 .popup-text {
   font-size: 22px;
   color: white;
   margin: 15px 0;
+  font-weight: 500;
+}
+
+/* Free Fire Image */
+.popup-game-img {
+  width: 100%;
+  max-width: 300px; /* Limit the max size */
+  border-radius: 10px;
+  margin-top: 10px;
 }
 
 /* Close Button */
@@ -11780,7 +11804,8 @@ a.theme-link:hover{
   cursor: pointer;
   transition: background 0.3s ease-in-out;
   margin-top: 15px;
-  width: 20%;
+  width: auto;
+  min-width: 120px;
 }
 
 .close-btn:hover {
@@ -11802,17 +11827,17 @@ a.theme-link:hover{
 /* 📱 Mobile Styles */
 @media (max-width: 480px) {
   #popup {
-      width: 90%;
+      width: 95%;
       max-width: 380px; /* Adjusted for mobile */
       padding: 15px;
   }
 
-  #popup img {
-      max-width: 320px;
-  }
-
   .popup-text {
       font-size: 18px; /* Smaller text on small screens */
+  }
+
+  .popup-game-img {
+      max-width: 250px; /* Adjust Free Fire image size */
   }
 
   .close-btn {
@@ -11820,3 +11845,4 @@ a.theme-link:hover{
       padding: 10px;
   }
 }
+
