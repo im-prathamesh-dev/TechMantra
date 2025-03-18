@@ -86,29 +86,29 @@ secs_span.className = "secs";
 countdown.appendChild(secs_span);
 
 // Update countdown every second
-setInterval(function () {
-  var current_date = new Date().getTime();
-  var seconds_left = (target_date - current_date) / 1000;
+// setInterval(function () {
+//   var current_date = new Date().getTime();
+//   var seconds_left = (target_date - current_date) / 1000;
 
-  var days = parseInt(seconds_left / 86400);
-  seconds_left = seconds_left % 86400;
+//   var days = parseInt(seconds_left / 86400);
+//   seconds_left = seconds_left % 86400;
 
-  var hours = parseInt(seconds_left / 3600);
-  seconds_left = seconds_left % 3600;
+//   var hours = parseInt(seconds_left / 3600);
+//   seconds_left = seconds_left % 3600;
 
-  var minutes = parseInt(seconds_left / 60);
-  var seconds = parseInt(seconds_left % 60);
+//   var minutes = parseInt(seconds_left / 60);
+//   var seconds = parseInt(seconds_left % 60);
 
-  // Update countdown display
-  days_span.innerHTML =
-    '<span class="number">' + days + '</span><span class="unit">Days</span>';
-  hours_span.innerHTML =
-    '<span class="number">' + hours + '</span><span class="unit">Hrs</span>';
-  minutes_span.innerHTML =
-    '<span class="number">' + minutes + '</span><span class="unit">Mins</span>';
-  secs_span.innerHTML =
-    '<span class="number">' + seconds + '</span><span class="unit">Secs</span>';
-}, 1000);
+//   // Update countdown display
+//   days_span.innerHTML =
+//     '<span class="number">' + days + '</span><span class="unit">Days</span>';
+//   hours_span.innerHTML =
+//     '<span class="number">' + hours + '</span><span class="unit">Hrs</span>';
+//   minutes_span.innerHTML =
+//     '<span class="number">' + minutes + '</span><span class="unit">Mins</span>';
+//   secs_span.innerHTML =
+//     '<span class="number">' + seconds + '</span><span class="unit">Secs</span>';
+// }, 1000);
 
 document.addEventListener("DOMContentLoaded", function () {
   // Show popup on page load
